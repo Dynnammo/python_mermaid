@@ -54,7 +54,7 @@ RM --> A
 which results in the following diagram
 ```mermaid
 ---
-title: "Little Women"
+title: Little Women
 ---
 graph LR
 M["Meg"]
