@@ -11,10 +11,13 @@ LINK_SHAPES = {
 
 class Link:
     def __init__(self, origin: Node, end: Node, shape: str = "arrow-head", message: str = ""):
-        pass
+        self.origin = origin
+        self.end = end
+        self.shape = LINK_SHAPES[shape]
+        self.message = message
     
     def __str__(self):
-        if not message:
-            return f"{origin.id} {LINK_SHAPES[self.shape]} {end.id}"
+        if not self.message:
+            return f"{self.origin.id} {self.shape} {self.end.id}"
         else:
-            return f"{origin.id} {LINK_SHAPES[self.shape]} |{message}| {end.id}"
+            return f"{self.origin.id} {self.shape} |{self.essage}| {self.end.id}"
