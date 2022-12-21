@@ -8,11 +8,12 @@ INTERACTION_TYPE = {
     "callback": "call callback()"
 }
 
+
 class Interaction:
     def __init__(self, node: Node, type: str = "link", args: List[str] = []):
         self.node = node
         self.type = INTERACTION_TYPE[type]
         self.args = args if args else None
-        
+ 
     def __str__(self):
         return f"click {self.node.id} {self.type} {' '.join(self.args)}"
