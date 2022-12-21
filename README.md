@@ -3,13 +3,13 @@ This modules aims to implement a simple way for developers/admin-sys/devops to c
 
 ## Installation
 ```shell
-pip install python-mermaid
+pip install python_mermaid
 ```
 
 ## Getting started
 ```py
 # Creating a simple flowchart diagram
-from python-mermaid import FlowChart
+from python_mermaid import FlowChart
 
 the_march_family = [
     ("Meg","M"),
@@ -62,4 +62,4 @@ which results can be seen [here](https://mermaid.live/edit#pako:eNo9jr0KgzAQgF8l
 ## Contribute
 Wanna help ? Find a bug ?
 1. Do not hesitate to fork the repository and send PRs with your changes
-2. No time to code ? Send a bug/feature issue [here](https://github.com/Dynnammo/python-mermaid/issues/new/choose)
+2. No time to code ? Send a bug/feature issue [here](https://github.com/Dynnammo/python_mermaid/issues/new/choose)
