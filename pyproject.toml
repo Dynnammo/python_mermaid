@@ -1,8 +1,8 @@
 [tool.poetry]
 name = "python_mermaid"
-version = "0.1.1"
+version = "0.1.2"
 description = ""
-authors = ["THIVEND <baptiste.thivend@proton.me>"]
+authors = ["Dynnammo <contact@dynnammo.com>"]
 readme = "README.md"
 packages = [{include = "python_mermaid"}]
 
