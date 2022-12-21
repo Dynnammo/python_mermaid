@@ -66,10 +66,13 @@ which results can be seen [here](https://mermaid.live/edit#pako:eNptj8FOw0AMRH9l
 Check [issues](https://github.com/Dynnammo/python_mermaid/issues) for more information
 
 ## Development
-- Requirements: install [Poetry](https://python-poetry.org)
-- Clone the repo
-- Install dependencies including dev ones
+- Requirements: install [Poetry](https://python-poetry.org). Here is the official method below. ⚠️ Please consider getting a look at Poetry's documentation if it doesn't work. ⚠️
 ```shell
+curl -sSL https://install.python-poetry.org | python3 -
+```
+- All-in-one command below to clone and install dependencies
+```shell
+curl -sSL https://install.python-poetry.org | python3 -
 git clone https://github.com/Dynnammo/python_mermaid
 cd python_mermaid
 poetry shell
