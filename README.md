@@ -6,7 +6,10 @@ This modules aims to implement a simple way for developers/admin-sys/devops to c
 pip install python_mermaid
 ```
 
-## Getting started
+## How to use
+All examples are available [here](./examples)
+
+Run the script below to see diagram generation
 ```py
 # Creating a simple flowchart diagram
 from python_mermaid.diagram import (
@@ -59,11 +62,38 @@ robert_march ---> amy
 ```
 which results can be seen [here](https://mermaid.live/edit#pako:eNptj8FOw0AMRH9l5XPzA3tAAnFC9AIHpOIKuYlJUmo72jqHqOq_46zEiZzGbzzS2DdorWPI0DQNqo9-4ZxeRw9NHyasqHXTF5qGhCrcfyLsuUc4op4t4MXqfGIfgp5CKpMsgY-yVCp24uJfQqVdU28V037Ff_sUjQ8pmrbss225a_mWH0fADoSL0NjFlzfUlBB8YGGEHGNH5QcB9R45mt3eF20he5l5B_PUkfPzSPG9QP6myzXcifRg9sf3X1ADb2E)
 
-
 ## Roadmap
-- [ ] **flowchart** setup
-- [ ] Add *styles* for nodes or links
-- [ ] More diagrams !
+Check [issues](https://github.com/Dynnammo/python_mermaid/issues) for more information
+
+## Development
+- Requirements: install [Poetry](https://python-poetry.org). Here is the official method below. ⚠️ Please consider getting a look at Poetry's documentation if it doesn't work. ⚠️
+```shell
+curl -sSL https://install.python-poetry.org | python3 -
+```
+- All-in-one command below to clone and install dependencies
+```shell
+curl -sSL https://install.python-poetry.org | python3 -
+git clone https://github.com/Dynnammo/python_mermaid
+cd python_mermaid
+poetry shell
+poetry install --with dev
+```
+
+To launch tests:
+```shell
+poetry run pytest
+```
+
+To check linting:
+```shell
+poetry run flake8
+```
+
+This project comes with a tool called `pre-commit` that checks if your code is correctly linted.
+If you want to use it, run the following
+```shell
+pre-commit install
+```
 
 ## Contribute
 Wanna help ? Find a bug ?
