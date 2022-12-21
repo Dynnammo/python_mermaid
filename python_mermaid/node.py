@@ -22,10 +22,7 @@ class Node:
         self.id = id
         self.content = content if content else id
         self.shape = NODE_SHAPES[shape]
-        
-        if shape not in NODE_SHAPES.keys():
-            raise ValueError(f"Shape given is not a normalized shape: {shape}. Please try one of the following: {str(NODE_SHAPES.keys())}")
-        
+
         # TODO: verify that content match a working string pattern
 
     def __str__(self):
