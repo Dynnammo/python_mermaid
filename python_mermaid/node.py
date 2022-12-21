@@ -2,7 +2,6 @@ from typing import List
 from .utils import snake_case
 
 
-
 class NodeShape:
     def __init__(self, start: str, end: str):
         self.start = start
@@ -47,7 +46,7 @@ class Node:
 
     def add_sub_nodes(self, new_nodes: List['Node'] = []):
         self.sub_nodes = self.sub_nodes + new_nodes
-        
+
     def __repr__(self):
         return f"{self.id}['{self.content}'] Nb_children:{len(self.sub_nodes)}"
 
