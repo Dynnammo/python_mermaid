@@ -7,9 +7,9 @@ jobs:
       fail-fast: false
     runs-on: ubuntu-18.04
     steps:
-      - name: Install Poetry Action
-        uses: snok/install-poetry@v1.3.3
-      - name: Install dev dependencies
-        run: poetry install --with=dev
-      - name: Run flake8
-        run: poetry run flake8
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+      - uses: Gr1N/setup-poetry@v7
+      - run: poetry --version
