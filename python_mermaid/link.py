@@ -9,15 +9,24 @@ LINK_SHAPES = {
     "thick-link": "==>"
 }
 
+
 class Link:
-    def __init__(self, origin: Node, end: Node, shape: str = "arrow-head", message: str = ""):
+    def __init__(
+        self,
+        origin: Node,
+        end: Node,
+        shape: str = "arrow-head",
+        message: str = ""
+    ):
         self.origin = origin
         self.end = end
         self.shape = LINK_SHAPES[shape]
         self.message = message
-    
+
     def __str__(self):
+        s = ""
         if not self.message:
-            return f"{self.origin.id} {self.shape} {self.end.id}"
+            s = f"{self.origin.id} {self.shape} {self.end.id}"
         else:
-            return f"{self.origin.id} {self.shape} |{self.message}| {self.end.id}"
+            s = f"{self.origin.id} {self.shape} |{self.message}| {self.end.id}"
+        return s

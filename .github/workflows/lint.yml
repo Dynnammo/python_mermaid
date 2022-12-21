@@ -52,4 +52,4 @@ jobs:
       - name: Run tests
         run: |
           source .venv/bin/activate
-          poetry run flake8
+          poetry run flake8 python_mermaid
