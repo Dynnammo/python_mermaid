@@ -36,7 +36,7 @@ class MermaidDiagram:
         self.nodes += nodes
 
     def add_links(self, links=[]):
-        self.nodes += links
+        self.links += links
 
     def __str__(self):
         self.string = f"---\ntitle: {self.title}\n---\n"

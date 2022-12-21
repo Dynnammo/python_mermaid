@@ -19,6 +19,11 @@ LINK_2 = Link(
     NODE_2,
     NODE_1
 )
+LINK_3 = Link(
+    NODE_1,
+    NODE_2,
+    shape="thick-link"
+)
 
 diagram_simple = (
 f"""---
