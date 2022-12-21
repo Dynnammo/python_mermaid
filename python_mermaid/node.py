@@ -30,7 +30,13 @@ NODE_SHAPES = {
 
 
 class Node:
-    def __init__(self, id: str, content: str = None, shape: str = "normal", sub_nodes: List['Node'] = []):
+    def __init__(
+        self,
+        id: str,
+        content: str = None,
+        shape: str = "normal",
+        sub_nodes: List['Node'] = []
+    ):
         self.id = snake_case(id)
         self.content = content if content else id
         self.shape = NODE_SHAPES[shape]
@@ -49,5 +55,10 @@ class Node:
                 "end"
             ])
         else:
-            s = f"{self.id}{self.shape.start}\"{self.content}\"{self.shape.end}"
+            s = ''.join([
+                self.id,
+                self.shape.start,
+                '"' + self.content + '"',
+                self.shape.end
+            ])
         return s
