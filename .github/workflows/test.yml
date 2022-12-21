@@ -12,4 +12,4 @@ jobs:
         with:
           python-version: 3.8
       - uses: Gr1N/setup-poetry@v7
-      - run: poetry --version
+      - run: poetry install
