@@ -51,8 +51,8 @@ RM --> J
 RM --> B
 RM --> A
 ```
-which results in the following diagram
-![](https://mermaid.ink/img/pako:eNo9jr0KgzAQgF8l3GxewKGgdBJd7FBor0OqV5U2iaTnIOK79xKo2_fdD3wbdL4nyEFrjY4n_lCuEOqJhdTVW3II6NJ2CGYeVd2ia-4IDQ0ID3SVcOUTloIl8ZikECnsmriND61_UuDkcaK0PqnmoOqg8qACMrAUrJl6KdzQKUnjkSwhxMrehHes2-XOLOwvq-sg57BQBsvcG6bzZKTaQv4yn69MZ-Nu3v99_wEheFGF?type=png)](https://mermaid.live/edit#pako:eNo9jr0KgzAQgF8l3GxewKGgdBJd7FBor0OqV5U2iaTnIOK79xKo2_fdD3wbdL4nyEFrjY4n_lCuEOqJhdTVW3II6NJ2CGYeVd2ia-4IDQ0ID3SVcOUTloIl8ZikECnsmriND61_UuDkcaK0PqnmoOqg8qACMrAUrJl6KdzQKUnjkSwhxMrehHes2-XOLOwvq-sg57BQBsvcG6bzZKTaQv4yn69MZ-Nu3v99_wEheFGF)
+which results can be seen [here](https://mermaid.live/edit#pako:eNo9jr0KgzAQgF8l3GxewKGgdBJd7FBor0OqV5U2iaTnIOK79xKo2_fdD3wbdL4nyEFrjY4n_lCuEOqJhdTVW3II6NJ2CGYeVd2ia-4IDQ0ID3SVcOUTloIl8ZikECnsmriND61_UuDkcaK0PqnmoOqg8qACMrAUrJl6KdzQKUnjkSwhxMrehHes2-XOLOwvq-sg57BQBsvcG6bzZKTaQv4yn69MZ-Nu3v99_wEheFGF)
+
 
 ## Roadmap
 - [ ] *flowchart* setup
