@@ -9,49 +9,55 @@ pip install python_mermaid
 ## Getting started
 ```py
 # Creating a simple flowchart diagram
-from python_mermaid import FlowChart
+from python_mermaid.diagram import (
+    MermaidDiagram,
+    Node,
+    Link
+)
 
-the_march_family = [
-    ("Meg","M"),
-    ("Jo", "J"),
-    ("Beth"."B"),
-    ("Amy", "A"),
-    ("Robert March","RM")
+# Family members
+meg = Node("Meg")
+jo = Node("Jo")
+beth = Node("Beth")
+amy = Node("Amy")
+robert = Node("Robert March")
+
+the_march_family = [meg, jo, beth, amy, robert]
+
+# Create links
+family_links = [
+    Link(robert, meg),
+    Link(robert, jo),
+    Link(robert, beth),
+    Link(robert, amy),
 ]
 
-links = [
-    ("Robert March", "Meg"),
-    ("Robert March", "Jo"),
-    ("Robert March", "Beth"),
-    ("Robert March", "Amy"),
-]
-
-chart = Flowchart(
+chart = MermaidDiagram(
     title="Little Women",
     nodes=the_march_family,
-    links=links
+    links=family_links
 )
 
 print(chart)
 ```
+
 Returns the following
 ```txt
 ---
-title: "Little Women"
+title: Little Women
 ---
-graph LR
-M["Meg"]
-J["Jo"]
-B["Beth"]
-A["Amy"]
-RM["Robert"]
-
-RM --> M
-RM --> J
-RM --> B
-RM --> A
+graph 
+meg["Meg"]
+jo["Jo"]
+beth["Beth"]
+amy["Amy"]
+robert_march["Robert March"]
+robert_march ---> meg
+robert_march ---> jo
+robert_march ---> beth
+robert_march ---> amy
 ```
-which results can be seen [here](https://mermaid.live/edit#pako:eNo9jr0KgzAQgF8l3GxewKGgdBJd7FBor0OqV5U2iaTnIOK79xKo2_fdD3wbdL4nyEFrjY4n_lCuEOqJhdTVW3II6NJ2CGYeVd2ia-4IDQ0ID3SVcOUTloIl8ZikECnsmriND61_UuDkcaK0PqnmoOqg8qACMrAUrJl6KdzQKUnjkSwhxMrehHes2-XOLOwvq-sg57BQBsvcG6bzZKTaQv4yn69MZ-Nu3v99_wEheFGF)
+which results can be seen [here](https://mermaid.live/edit#pako:eNptj8FOw0AMRH9l5XPzA3tAAnFC9AIHpOIKuYlJUmo72jqHqOq_46zEiZzGbzzS2DdorWPI0DQNqo9-4ZxeRw9NHyasqHXTF5qGhCrcfyLsuUc4op4t4MXqfGIfgp5CKpMsgY-yVCp24uJfQqVdU28V037Ff_sUjQ8pmrbss225a_mWH0fADoSL0NjFlzfUlBB8YGGEHGNH5QcB9R45mt3eF20he5l5B_PUkfPzSPG9QP6myzXcifRg9sf3X1ADb2E)
 
 
 ## Roadmap
