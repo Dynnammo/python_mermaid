@@ -36,6 +36,9 @@ print(chart)
 ```
 Returns the following
 ```txt
+---
+title: "Little Women"
+---
 graph LR
 M["Meg"]
 J["Jo"]
@@ -50,6 +53,9 @@ RM --> A
 ```
 which results in the following diagram
 ```mermaid
+---
+title: "Little Women"
+---
 graph LR
 M["Meg"]
 J["Jo"]
