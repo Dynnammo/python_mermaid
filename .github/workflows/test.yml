@@ -5,6 +5,7 @@ jobs:
   ci:
     strategy:
       fail-fast: false
+    runs-on: ubuntu-18.04
     steps:
       - name: Install Poetry Action
         uses: snok/install-poetry@v1.3.3
