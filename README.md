@@ -66,11 +66,30 @@ which results can be seen [here](https://mermaid.live/edit#pako:eNptj8FOw0AMRH9l
 Check [issues](https://github.com/Dynnammo/python_mermaid/issues) for more information
 
 ## Development
-- Install [Poetry](https://python-poetry.org)
+- Requirements: install [Poetry](https://python-poetry.org)
 - Clone the repo
 - Install dependencies including dev ones
 ```shell
+git clone https://github.com/Dynnammo/python_mermaid
+cd python_mermaid
+poetry shell
 poetry install --with dev
+```
+
+To launch tests:
+```shell
+poetry run pytest
+```
+
+To check linting:
+```shell
+poetry run flake8
+```
+
+This project comes with a tool called `pre-commit` that checks if your code is correctly linted.
+If you want to use it, run the following
+```shell
+pre-commit install
 ```
 
 ## Contribute
