@@ -20,6 +20,6 @@ jobs:
         with:
           poetry-version: ${{ matrix.poetry-version }}
       - name: Install dev dependencies
-        run: poetry install --with=dev
+        run: poetry install
       - name: Run flake8
         run: poetry run flake8
