@@ -7,6 +7,7 @@ pip install python_mermaid
 ```
 
 ## Getting started
+TL;DR : examples are available [here](https://github.com/Dynnammo/python_mermaid/tree/main/examples/)
 ```py
 # Creating a simple flowchart diagram
 from python_mermaid.diagram import (
@@ -58,7 +59,6 @@ robert_march ---> beth
 robert_march ---> amy
 ```
 which results can be seen [here](https://mermaid.live/edit#pako:eNptj8FOw0AMRH9l5XPzA3tAAnFC9AIHpOIKuYlJUmo72jqHqOq_46zEiZzGbzzS2DdorWPI0DQNqo9-4ZxeRw9NHyasqHXTF5qGhCrcfyLsuUc4op4t4MXqfGIfgp5CKpMsgY-yVCp24uJfQqVdU28V037Ff_sUjQ8pmrbss225a_mWH0fADoSL0NjFlzfUlBB8YGGEHGNH5QcB9R45mt3eF20he5l5B_PUkfPzSPG9QP6myzXcifRg9sf3X1ADb2E)
-
 
 ## Roadmap
 - [ ] **flowchart** setup
