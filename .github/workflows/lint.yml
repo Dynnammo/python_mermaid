@@ -49,7 +49,7 @@ jobs:
       #----------------------------------------------
       #              run test suite
       #----------------------------------------------
-      - name: Run tests
+      - name: Lint files
         run: |
           source .venv/bin/activate
           poetry run flake8 python_mermaid
