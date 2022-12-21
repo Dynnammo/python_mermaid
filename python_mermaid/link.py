@@ -20,4 +20,4 @@ class Link:
         if not self.message:
             return f"{self.origin.id} {self.shape} {self.end.id}"
         else:
-            return f"{self.origin.id} {self.shape} |{self.essage}| {self.end.id}"
+            return f"{self.origin.id} {self.shape} |{self.message}| {self.end.id}"
