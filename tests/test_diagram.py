@@ -47,8 +47,16 @@ def test_adding_links_to_diagram():
     )
 
 def test_diagram_with_subgraph():
-    diag = MermaidDiagram(
+    m = MermaidDiagram(
         title=DUMMY_TITLE,
         nodes=[BIG_NODE_1,NODE_2]
     )
-    assert str(diag) == diagram_with_subgraphs
+    assert str(m) == diagram_with_subgraphs
+
+def test_diagram_with_interactions():
+    m = MermaidDiagram(
+        title=DUMMY_TITLE,
+        nodes=[NODE_1],
+        interactions=[INTERACTION_1]
+    )
+    assert str(m) == diagram_with_interactions

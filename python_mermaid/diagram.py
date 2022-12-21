@@ -1,6 +1,7 @@
 from typing import List
 from .node import Node
 from .link import Link
+from .interaction import Interaction
 
 DIAGRAM_TYPES = {
     "default": "graph",
@@ -23,12 +24,14 @@ class MermaidDiagram:
         title: str = "",
         nodes: List[Node] = [],
         links: List[Link] = [],
+        interactions: List[Interaction] = [],
         type="default",
         orientation="default"
     ):
         self.title = title
         self.nodes = nodes
         self.links = links
+        self.interactions = interactions
         self.type = DIAGRAM_TYPES[type]
         self.orientation = DIAGRAM_ORIENTATION[orientation]
 
@@ -42,15 +45,23 @@ class MermaidDiagram:
         self.string = f"---\ntitle: {self.title}\n---\n"
         nodes_string = (
             '\n'.join([str(node) for node in self.nodes])
-            if len(self.nodes)
-            else ''
         )
         links_string = (
             '\n'.join([str(link) for link in self.links])
-            if len(self.links)
-            else ''
         )
-        self.string += (
-            f"{self.type} {self.orientation}\n{nodes_string}\n{links_string}"
+        interactions_string = (
+            '\n'.join([str(interaction) for interaction in self.interactions])
         )
+        final_strings = list(
+            filter(
+                None,
+                [
+                    f"{self.type} {self.orientation}",
+                    nodes_string,
+                    links_string,
+                    interactions_string
+                ]
+            )
+        )
+        self.string += '\n'.join(final_strings)
         return self.string
