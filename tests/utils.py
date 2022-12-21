@@ -52,4 +52,3 @@ diagram_with_nodes_and_links = (
     f"""{LINK_1.origin.id} {LINK_1.head_left}{LINK_1.shape}{LINK_1.head_right} {LINK_1.end.id}\n""" +
     f"""{LINK_2.origin.id} {LINK_2.head_left}{LINK_2.shape}{LINK_2.head_right} {LINK_2.end.id}"""
 )
-

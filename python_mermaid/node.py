@@ -1,3 +1,6 @@
+from .utils import snake_case
+
+
 class NodeShape:
     def __init__(self, start: str, end: str):
         self.start = start
@@ -27,7 +30,7 @@ NODE_SHAPES = {
 
 class Node:
     def __init__(self, id: str, content: str = None, shape: str = "normal"):
-        self.id = id
+        self.id = snake_case(id)
         self.content = content if content else id
         self.shape = NODE_SHAPES[shape]
 
