@@ -1,8 +1,14 @@
-CHART_TYPES = [
-    "flowchart"
-]
+from typing import List
+from .node import Node
+from .link import Link
 
-CHART_ORIENTATION = {
+DIAGRAM_TYPES = {
+    "default": "graph",
+    "flowchart": "flowchart"
+}
+
+DIAGRAM_ORIENTATION = {
+    "default": "",
     "top to bottom": "TB",
     "top-down": "TD", 
     "bottom to top": "BT",
@@ -10,87 +16,31 @@ CHART_ORIENTATION = {
     "left to right": "LR",
 }
 
-# Shapes are created following the documentation here :
-# https://mermaid.js.org/syntax/flowchart.html#node-shapes
-NODE_SHAPES = {
-    "normal":{"start":"[","end":"]"},
-    "round-edge": {"start":"(","end":")"},
-    "stadium-shape": {"start":"([","end":"])"},
-    "subroutine-shape": {"start":"[[","end":"]]"},
-    "cylindrical": {"start":"[(","end":")]"},
-    "circle": {"start":"((","end":"))"},
-    "label-shape": {"start":">","end":"]"},
-    "rhombus": {"start":"{","end":"}"},
-    "hexagon": {"start":"{{","end":"}}"},
-    "parallelogram": {"start":"[/","end":"/]"},
-    "parallelogram-alt": {"start":"[\\","end":"\\]"},
-    "trapezoid": {"start":"[/","end":"\\]"},
-    "trapezoid-alt": {"start":"[\\","end":"/]"},
-    "double-circle": {"start":"(((","end":")))"},
-}
-
-# Link are created following the documentation here :
-# https://mermaid.js.org/syntax/flowchart.html#links-between-nodes
-LINK_SHAPES = {
-    "arrow-head": "-->",
-    "open-link": "---",
-    "dotted-link": "-.->",
-    "thick-link": "==>"
-}
-    
-
 
 class MermaidDiagram:
-    def __init__(self, title="", nodes=[], links=[]):
+    def __init__(self, title: str = "", nodes: List[Node] = [], links: List[Link] = [], type="default", orientation="default"):
         self.title = title
         self.nodes = nodes
         self.links = links
+        self.type = DIAGRAM_TYPES[type]
+        self.orientation = DIAGRAM_ORIENTATION[orientation]
     
     def add_nodes(self, nodes=[]):
-        pass
+        self.nodes += nodes
         
     def add_links(self, links=[]):
-        pass
+        self.nodes += links
+
+    def __str__(self):
+        self.string = f"---\ntitle: {self.title}\n---\n"
+        nodes_string = '\n'.join([str(node) for node in self.nodes]) if len(self.nodes) else ''
+        links_string = '\n'.join([str(link) for link in self.links]) if len(self.links) else ''
+        self.string += f"{self.type} {self.orientation}\n{nodes_string}\n{links_string}"
+        return self.string
 
 
 class FlowChartDiagramm(MermaidDiagram):
-    def __init__(self, title=None, orientation="top-down"):
+    def __init__(self, title: str = "", orientation="top-down"):
         super().__init__(title)
-        self.type = 'flowchart'
-        self.orientation = CHART_ORIENTATION[orientation]
-
-    def publish(self, title):
-        with open(f"graph-{title}", "w") as graph:
-            graph.write(str(title))
-            for node in self.nodes:
-                graph.write(str(node))
-            for link in self.links:
-                graph.write(str(link))
-
-class Node:
-    def __init__(self, id, content=None, shape="normal"):
-        self.id = id
-        self.content = content
-        self.shape = shape
-        
-        if shape not in NODE_SHAPES.keys():
-            raise ValueError(f"Shape given is not a normalized shape: {shape}. Please try one of the following: {str(NODE_SHAPES.keys())}")
-        
-        # TODO: verify that content match a working string pattern
-
-    def __str__(self):
-        if content:
-            return f"{id}{shape['start']}\"{content}\"{shape['end']}"
-        else:
-            return f"{id}{shape['start']}\"{content}\"{shape['end']}"
-
-
-class Link:
-    def __init__(self, origin, end, shape="arrow-head",message=None):
-        pass
-    
-    def __str__(self):
-        if not message:
-            return f"{origin.id} {LINK_SHAPES[self.shape]} {end.id}"
-        else:
-            return f"{origin.id} {LINK_SHAPES[self.shape]} |{message}| {end.id}"
+        self.type = DIAGRAM_TYPES['flowchart']
+        self.orientation = DIAGRAM_ORIENTATIO[orientation]
