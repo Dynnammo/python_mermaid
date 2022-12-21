@@ -55,9 +55,9 @@ which results can be seen [here](https://mermaid.live/edit#pako:eNo9jr0KgzAQgF8l
 
 
 ## Roadmap
-- [ ] *flowchart* setup
+- [ ] **flowchart** setup
 - [ ] Add *styles* for nodes or links
-- [ ]
+- [ ] More diagrams !
 
 ## Contribute
 Wanna help ? Find a bug ?
