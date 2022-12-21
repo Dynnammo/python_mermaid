@@ -1,5 +1,6 @@
 from python_mermaid.link import Link
 from python_mermaid.node import Node
+from python_mermaid.interaction import Interaction
 from python_mermaid.diagram import (
     MermaidDiagram
 )
@@ -10,6 +11,10 @@ NODE_1 = Node(
 )
 NODE_2 = Node(
     "My second node"
+)
+INTERACTION_1 = Interaction(
+    NODE_1,
+    args=["https://wikipedia.org"]
 )
 BIG_NODE_1 = Node(
     "My big node",
@@ -33,9 +38,7 @@ diagram_simple = (
 f"""---
 title: {DUMMY_TITLE}
 ---
-graph 
-
-"""
+graph """
 )
 
 diagram_with_one_node = (
@@ -43,18 +46,17 @@ f"""---
 title: {DUMMY_TITLE}
 ---
 graph 
-{NODE_1.id}["{NODE_1.content}"]
-"""
+{NODE_1.id}["{NODE_1.content}"]"""
 )
 
 diagram_with_multiple_nodes = (
-    diagram_with_one_node + f"""{NODE_2.id}["{NODE_2.content}"]\n"""
+    diagram_with_one_node + f"""\n{NODE_2.id}["{NODE_2.content}"]"""
 )
 
 diagram_with_nodes_and_links = (
     diagram_with_multiple_nodes +
-    f"""{LINK_1.origin.id} {LINK_1.head_left}{LINK_1.shape}{LINK_1.head_right} {LINK_1.end.id}\n""" +
-    f"""{LINK_2.origin.id} {LINK_2.head_left}{LINK_2.shape}{LINK_2.head_right} {LINK_2.end.id}"""
+    f"""\n{LINK_1.origin.id} {LINK_1.head_left}{LINK_1.shape}{LINK_1.head_right} {LINK_1.end.id}""" +
+    f"""\n{LINK_2.origin.id} {LINK_2.head_left}{LINK_2.shape}{LINK_2.head_right} {LINK_2.end.id}"""
 )
 
 diagram_with_subgraphs = (
@@ -65,6 +67,14 @@ graph
 subgraph my_big_node ["My big node"]
 {str(NODE_1)}
 end
-{str(NODE_2)}
-"""
+{str(NODE_2)}"""
+)
+
+diagram_with_interactions = (
+f"""---
+title: {DUMMY_TITLE}
+---
+graph 
+{str(NODE_1)}
+{str(INTERACTION_1)}"""
 )
