@@ -1,4 +1,5 @@
 from .utils import snake_case
+from typing import List
 
 
 class NodeShape:
@@ -29,12 +30,35 @@ NODE_SHAPES = {
 
 
 class Node:
-    def __init__(self, id: str, content: str = None, shape: str = "normal"):
+    def __init__(
+        self,
+        id: str,
+        content: str = None,
+        shape: str = "normal",
+        sub_nodes: List['Node'] = []
+    ):
         self.id = snake_case(id)
         self.content = content if content else id
         self.shape = NODE_SHAPES[shape]
+        self.sub_nodes = sub_nodes
 
         # TODO: verify that content match a working string pattern
 
+    def add_sub_nodes(self, nodes: List['Node'] = []):
+        self.sub_nodes += nodes
+
     def __str__(self):
-        return f"{self.id}{self.shape.start}\"{self.content}\"{self.shape.end}"
+        if len(self.sub_nodes):
+            s = '\n'.join([
+                f'subgraph {self.id} ["{self.content}"]',
+                '\n'.join([str(node) for node in self.sub_nodes]),
+                "end"
+            ])
+        else:
+            s = ''.join([
+                self.id,
+                self.shape.start,
+                '"' + self.content + '"',
+                self.shape.end
+            ])
+        return s
