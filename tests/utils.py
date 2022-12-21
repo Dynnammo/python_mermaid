@@ -1,8 +1,7 @@
 from python_mermaid.link import Link
 from python_mermaid.node import Node
-from python_mermaid.mermaid import (
-    MermaidDiagram,
-    FlowChartDiagramm
+from python_mermaid.diagram import (
+    MermaidDiagram
 )
 
 DUMMY_TITLE = "My diagram"
