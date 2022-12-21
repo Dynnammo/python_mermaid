@@ -45,3 +45,10 @@ def test_adding_links_to_diagram():
     assert str(m) == (
         diagram_with_nodes_and_links + f"\n{str(LINK_3)}"
     )
+
+def test_diagram_with_subgraph():
+    diag = MermaidDiagram(
+        title=DUMMY_TITLE,
+        nodes=[BIG_NODE_1,NODE_2]
+    )
+    assert str(diag) == diagram_with_subgraphs

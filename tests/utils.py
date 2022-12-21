@@ -11,6 +11,10 @@ NODE_1 = Node(
 NODE_2 = Node(
     "My second node"
 )
+BIG_NODE_1 = Node(
+    "My big node",
+    sub_nodes=[NODE_1]
+)
 LINK_1 = Link(
     NODE_1,
     NODE_2
@@ -51,4 +55,16 @@ diagram_with_nodes_and_links = (
     diagram_with_multiple_nodes +
     f"""{LINK_1.origin.id} {LINK_1.head_left}{LINK_1.shape}{LINK_1.head_right} {LINK_1.end.id}\n""" +
     f"""{LINK_2.origin.id} {LINK_2.head_left}{LINK_2.shape}{LINK_2.head_right} {LINK_2.end.id}"""
+)
+
+diagram_with_subgraphs = (
+f"""---
+title: {DUMMY_TITLE}
+---
+graph 
+subgraph my_big_node ["My big node"]
+{str(NODE_1)}
+end
+{str(NODE_2)}
+"""
 )
