@@ -1,0 +1,1 @@
+from python_mermaid import FlowChartDiagramm

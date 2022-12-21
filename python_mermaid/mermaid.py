@@ -59,6 +59,13 @@ class FlowChartDiagramm(MermaidDiagram):
         self.type = 'flowchart'
         self.orientation = CHART_ORIENTATION[orientation]
 
+    def publish(self, title):
+        with open(f"graph-{title}", "w") as graph:
+            graph.write(str(title))
+            for node in self.nodes:
+                graph.write(str(node))
+            for link in self.links:
+                graph.write(str(link))
 
 class Node:
     def __init__(self, id, content=None, shape="normal"):
@@ -67,9 +74,9 @@ class Node:
         self.shape = shape
         
         if shape not in NODE_SHAPES.keys():
-            raise ValueError(f"Shape given is not a normalized shape: {shape}. Please try one of the following: {str(NODE_SHAPES.keys())")
+            raise ValueError(f"Shape given is not a normalized shape: {shape}. Please try one of the following: {str(NODE_SHAPES.keys())}")
         
-        # TODO : test id if matching a pattern
+        # TODO: verify that content match a working string pattern
 
     def __str__(self):
         if content:
