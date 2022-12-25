@@ -35,13 +35,13 @@ class MermaidDiagram:
         self.type = DIAGRAM_TYPES[type]
         self.orientation = DIAGRAM_ORIENTATION[orientation]
 
-    def add_nodes(self, nodes=[]):
+    def add_nodes(self: 'MermaidDiagram', nodes=[]):
         self.nodes += nodes
 
-    def add_links(self, links=[]):
+    def add_links(self: 'MermaidDiagram', links=[]):
         self.links += links
 
-    def __str__(self):
+    def __str__(self: 'MermaidDiagram'):
         self.string = f"---\ntitle: {self.title}\n---\n"
         nodes_string = (
             '\n'.join([str(node) for node in self.nodes])

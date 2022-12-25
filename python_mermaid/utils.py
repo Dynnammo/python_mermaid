@@ -2,7 +2,7 @@ from re import sub
 from unidecode import unidecode
 
 
-def snake_case(s):
+def snake_case(s: str):
     s = unidecode(s)
     s = '_'.join(
         sub(

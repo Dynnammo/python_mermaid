@@ -15,5 +15,5 @@ class Interaction:
         self.type = INTERACTION_TYPE[type]
         self.args = args if args else None
 
-    def __str__(self):
+    def __str__(self: 'Interaction'):
         return f"click {self.node.id} {self.type} {' '.join(self.args)}"

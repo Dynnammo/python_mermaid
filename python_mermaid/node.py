@@ -47,10 +47,10 @@ class Node:
     def add_sub_nodes(self, new_nodes: List['Node'] = []):
         self.sub_nodes = self.sub_nodes + new_nodes
 
-    def __repr__(self):
+    def __repr__(self: 'Node'):
         return f"{self.id}['{self.content}'] Nb_children:{len(self.sub_nodes)}"
 
-    def __str__(self):
+    def __str__(self: 'Node'):
         s = ""
         if len(self.sub_nodes):
             s += '\n'.join([

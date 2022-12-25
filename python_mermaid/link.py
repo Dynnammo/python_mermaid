@@ -34,7 +34,7 @@ class Link:
         self.shape = LINK_SHAPES[shape]
         self.message = message
 
-    def __str__(self):
+    def __str__(self: 'Link'):
         elements = [
             self.origin.id + " ",
             self.head_left,
