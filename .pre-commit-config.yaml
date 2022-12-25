@@ -6,3 +6,7 @@ repos:
   exclude: tests/
   hooks:
     - id: flake8
+-   repo: https://github.com/fsouza/pre-commit-pyre-check
+    rev: ''  # Use the sha / tag you want to point at
+    hooks:
+    -   id: pyre-check
