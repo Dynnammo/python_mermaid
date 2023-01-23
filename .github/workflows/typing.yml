@@ -1,6 +1,6 @@
-name: lint
+name: "Type checking"
 
-on: pull_request
+on: [push]
 
 jobs:
   lint:
