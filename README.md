@@ -83,11 +83,10 @@ which results can be seen [here](https://mermaid.live/edit#pako:eNptj8FOw0AMRH9l
     - [x] Links between nodes
     - [x] Subgraph
         - [ ] Links between nodes with subgraphs
-        - [ ] Directions
+        - [ ] Directions [#24](https://github.com/Dynnammo/python_mermaid/issues/24)
     - [ ] Interaction
-    - [ ] Styling and classes
-    - [ ] Basic support for fontawesome
-    - [ ] Configuration
+    - [ ] Styling and classes [#19](https://github.com/Dynnammo/python_mermaid/issues/19) and [#20](https://github.com/Dynnammo/python_mermaid/issues/20)
+    - [ ] Basic support for fontawesome [#23](https://github.com/Dynnammo/python_mermaid/issues/23)
 
 ### Mi-2023
 - [ ] Architecture improvements for easing diagram process
