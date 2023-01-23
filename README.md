@@ -83,13 +83,13 @@ which results can be seen [here](https://mermaid.live/edit#pako:eNptj8FOw0AMRH9l
     - [x] Links between nodes
     - [x] Subgraph
         - [ ] Links between nodes with subgraphs
-        - [ ] Directions [#24](https://github.com/Dynnammo/python_mermaid/issues/24)
+        - [ ] Directions ([#24](https://github.com/Dynnammo/python_mermaid/issues/24))
     - [ ] Interaction
-    - [ ] Styling and classes [#19](https://github.com/Dynnammo/python_mermaid/issues/19) and [#20](https://github.com/Dynnammo/python_mermaid/issues/20)
-    - [ ] Basic support for fontawesome [#23](https://github.com/Dynnammo/python_mermaid/issues/23)
+    - [ ] Styling and classes ([#19](https://github.com/Dynnammo/python_mermaid/issues/19) and [#20](https://github.com/Dynnammo/python_mermaid/issues/20))
+    - [ ] Basic support for fontawesome ([#23](https://github.com/Dynnammo/python_mermaid/issues/23))
 
 ### Mi-2023
-- [ ] Architecture improvements for easing diagram process
+- [ ] Architecture improvements for easing diagram creation
 ## Development
 - Requirements: install [Poetry](https://python-poetry.org). Here is the official method below. ⚠️ Please consider getting a look at Poetry's documentation if it doesn't work. ⚠️
 ```shell
