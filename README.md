@@ -1,6 +1,18 @@
 # Python-Mermaid
 This modules aims to implement a simple way for developers/admin-sys/devops to create on-the-fly [Mermaid diagrams](https://mermaid.js.org/).
 
+✅ Use of this module when:
+- keeping up-to-date diagrams about systems that can can be discovered with automated scripts :
+    - architecture of a server (packages, services,...)
+    - architecture of a folder (files and subfolders,...)
+    - ...
+- keeping up-to-date diagrams about a data-visualization tool (like [Metabase](https://metabase.com), [Lightdash](https://lightdash.com) etc.)
+    - list of collections and indicators with their links for modification
+- ...
+
+❌ Do not use this module for
+- making a single instance diagram that doesn't need to be updated : documentation, presentation etc.
+
 ## Installation
 ```shell
 pip install python_mermaid
@@ -63,8 +75,22 @@ robert_march ---> amy
 which results can be seen [here](https://mermaid.live/edit#pako:eNptj8FOw0AMRH9l5XPzA3tAAnFC9AIHpOIKuYlJUmo72jqHqOq_46zEiZzGbzzS2DdorWPI0DQNqo9-4ZxeRw9NHyasqHXTF5qGhCrcfyLsuUc4op4t4MXqfGIfgp5CKpMsgY-yVCp24uJfQqVdU28V037Ff_sUjQ8pmrbss225a_mWH0fADoSL0NjFlzfUlBB8YGGEHGNH5QcB9R45mt3eF20he5l5B_PUkfPzSPG9QP6myzXcifRg9sf3X1ADb2E)
 
 ## Roadmap
-Check [issues](https://github.com/Dynnammo/python_mermaid/issues) for more information
+### February-March 2023
+1-to-1 implementation of [flowchart](https://mermaid.js.org/syntax/flowchart.html#flowcharts-basic-syntax)
+- [ ] All features of flowchart
+    - [x] Chart title
+    - [x] Nodes shapes
+    - [x] Links between nodes
+    - [x] Subgraph
+        - [ ] Links between nodes with subgraphs
+        - [ ] Directions
+    - [ ] Interaction
+    - [ ] Styling and classes
+    - [ ] Basic support for fontawesome
+    - [ ] Configuration
 
+### Mi-2023
+- [ ] Architecture improvements for easing diagram process
 ## Development
 - Requirements: install [Poetry](https://python-poetry.org). Here is the official method below. ⚠️ Please consider getting a look at Poetry's documentation if it doesn't work. ⚠️
 ```shell
