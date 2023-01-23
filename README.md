@@ -115,7 +115,7 @@ To check linting:
 poetry run flake8
 ```
 
-This project comes with a tool called `pre-commit` that checks if your code is correctly linted.
+This project comes with a tool called [`pre-commit`](https://pre-commit.com/) that checks if your code is correctly linted.
 If you want to use it, run the following
 ```shell
 pre-commit install
