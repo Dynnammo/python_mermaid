@@ -16,10 +16,9 @@ pytest = "^7.2.0"
 flake8 = "^6.0.0"
 pytest-cov = "^4.0.0"
 pre-commit = "^2.20.0"
+mypy = "^0.991"
 
 [tool.poetry.scripts]
-lint = ""
-test = "metabase_query_checker.collection_graph:start"
 
 
 [build-system]

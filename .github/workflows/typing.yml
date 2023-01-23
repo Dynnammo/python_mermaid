@@ -1,4 +1,4 @@
-name: "Linting"
+name: "Type checking"
 
 on: [push]
 
@@ -52,4 +52,4 @@ jobs:
       - name: Lint files
         run: |
           source .venv/bin/activate
-          poetry run flake8 python_mermaid
+          poetry run mypy python_mermaid

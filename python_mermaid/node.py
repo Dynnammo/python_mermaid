@@ -33,7 +33,7 @@ class Node:
     def __init__(
         self,
         id: str,
-        content: str = None,
+        content: str = "",
         shape: str = "normal",
         sub_nodes: List = [],
     ):
