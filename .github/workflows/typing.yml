@@ -51,5 +51,4 @@ jobs:
       #----------------------------------------------
       - name: Lint files
         run: |
-          source .venv/bin/activate
           poetry run mypy python_mermaid
