@@ -19,7 +19,7 @@ NODE_SHAPES = {
     "cylindrical": NodeShape("[(", ")]"),
     "circle": NodeShape("((", "))"),
     "label-shape": NodeShape(">", "]"),
-    "rhombus": NodeShape("{", ")"),
+    "rhombus": NodeShape("{", "}"),
     "hexagon": NodeShape("{{", ")}"),
     "parallelogram": NodeShape("[/", "/]"),
     "parallelogram-alt": NodeShape("[\\", "\\]"),
