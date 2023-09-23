@@ -42,7 +42,7 @@ class MermaidDiagram:
         self.links += links
 
     def __str__(self):
-        self.string = f"---\ntitle: {self.title}\n---\n"
+        self.string = f"---\ntitle: {self.title}\n---\n" if self.title else ""
         nodes_string = (
             '\n'.join([str(node) for node in self.nodes])
         )
