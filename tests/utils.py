@@ -34,19 +34,23 @@ LINK_3 = Link(
     shape="thick"
 )
 
-diagram_simple = (
-f"""---
-title: {DUMMY_TITLE}
----
-graph """
+def replace_all(string, dict):
+    for k, v in dict.items():
+        string = string.replace(k, v)
+    return string
+
+simple_diagram = replace_all(
+    open('tests/diagram_files/simple_diagram','r').read(),
+    {'DUMMY_TITLE':DUMMY_TITLE}
 )
 
-diagram_with_one_node = (
-f"""---
-title: {DUMMY_TITLE}
----
-graph 
-{NODE_1.id}["{NODE_1.content}"]"""
+diagram_with_one_node = replace_all(
+    open('tests/diagram_files/diagram_with_one_node','r').read(),
+    {
+        'DUMMY_TITLE':DUMMY_TITLE,
+        'NODE_1.id': NODE_1.id,
+        'NODE_1.content': NODE_1.content
+    }
 )
 
 diagram_with_multiple_nodes = (
@@ -59,22 +63,24 @@ diagram_with_nodes_and_links = (
     f"""\n{LINK_2.origin.id} {LINK_2.head_left}{LINK_2.shape}{LINK_2.head_right} {LINK_2.end.id}"""
 )
 
-diagram_with_subgraphs = (
-f"""---
-title: {DUMMY_TITLE}
----
-graph 
-subgraph my_big_node ["My big node"]
-{str(NODE_1)}
-end
-{str(NODE_2)}"""
+diagram_with_subgraphs = replace_all(
+    open('tests/diagram_files/diagram_with_subgraphs','r').read(),
+    {
+        'DUMMY_TITLE':DUMMY_TITLE,
+        'NODE_2.id': NODE_2.id,
+        'NODE_2.content': NODE_2.content,
+        'NODE_1.id': NODE_1.id,
+        'NODE_1.content': NODE_1.content
+    }
 )
 
-diagram_with_interactions = (
-f"""---
-title: {DUMMY_TITLE}
----
-graph 
-{str(NODE_1)}
-{str(INTERACTION_1)}"""
+diagram_with_interactions = replace_all(
+    open('tests/diagram_files/diagram_with_interactions','r').read(),
+    {
+        'DUMMY_TITLE':DUMMY_TITLE,
+        'NODE_1.id': NODE_1.id,
+        'NODE_1.content': NODE_1.content,
+        'INTERACTION_1.type': INTERACTION_1.type,
+        'INTERACTION_1.args': INTERACTION_1.args[0]
+    }
 )
