@@ -1,0 +1,6 @@
+---
+title: DUMMY_TITLE
+---
+graph 
+NODE_1.id["NODE_1.content"]
+click NODE_1.id INTERACTION_1.type INTERACTION_1.args

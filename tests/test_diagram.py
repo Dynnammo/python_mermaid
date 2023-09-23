@@ -4,7 +4,7 @@ from .utils import *
 
 def test_setup_diagram_with_only_a_title():
     m = MermaidDiagram(title=DUMMY_TITLE)
-    assert str(m) == diagram_simple
+    assert str(m) == simple_diagram
 
 def test_diagram_with_only_a_node():
     m = MermaidDiagram(title=DUMMY_TITLE, nodes=[NODE_1])

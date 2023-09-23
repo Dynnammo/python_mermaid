@@ -1,0 +1,8 @@
+---
+title: DUMMY_TITLE
+---
+graph 
+subgraph my_big_node ["My big node"]
+NODE_1.id["NODE_1.content"]
+end
+NODE_2.id["NODE_2.content"]
