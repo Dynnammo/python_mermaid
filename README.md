@@ -5,10 +5,9 @@ This modules aims to implement a simple way for developers/admin-sys/devops to c
 - keeping up-to-date diagrams about systems that can can be discovered with automated scripts :
     - architecture of a server (packages, services,...)
     - architecture of a folder (files and subfolders,...)
-    - ...
 - keeping up-to-date diagrams about a data-visualization tool (like [Metabase](https://metabase.com), [Lightdash](https://lightdash.com) etc.)
     - list of collections and indicators with their links for modification
-- ...
+
 
 ❌ Do not use this module for
 - making a single instance diagram that doesn't need to be updated : documentation, presentation etc.
@@ -75,7 +74,7 @@ robert_march ---> amy
 which results can be seen [here](https://mermaid.live/edit#pako:eNptj8FOw0AMRH9l5XPzA3tAAnFC9AIHpOIKuYlJUmo72jqHqOq_46zEiZzGbzzS2DdorWPI0DQNqo9-4ZxeRw9NHyasqHXTF5qGhCrcfyLsuUc4op4t4MXqfGIfgp5CKpMsgY-yVCp24uJfQqVdU28V037Ff_sUjQ8pmrbss225a_mWH0fADoSL0NjFlzfUlBB8YGGEHGNH5QcB9R45mt3eF20he5l5B_PUkfPzSPG9QP6myzXcifRg9sf3X1ADb2E)
 
 ## Roadmap
-### February-March 2023
+### October 2023
 1-to-1 implementation of [flowchart](https://mermaid.js.org/syntax/flowchart.html#flowcharts-basic-syntax)
 - [ ] All features of flowchart
     - [x] Chart title
@@ -88,7 +87,7 @@ which results can be seen [here](https://mermaid.live/edit#pako:eNptj8FOw0AMRH9l
     - [ ] Styling and classes ([#19](https://github.com/Dynnammo/python_mermaid/issues/19) and [#20](https://github.com/Dynnammo/python_mermaid/issues/20))
     - [ ] Basic support for fontawesome ([#23](https://github.com/Dynnammo/python_mermaid/issues/23))
 
-### Mi-2023
+### End 2023
 - [ ] Architecture improvements for easing diagram creation
 ## Development
 - Requirements: install [Poetry](https://python-poetry.org). Here is the official method below. ⚠️ Please consider getting a look at Poetry's documentation if it doesn't work. ⚠️
