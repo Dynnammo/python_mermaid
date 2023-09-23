@@ -1,11 +1,10 @@
 # See https://pre-commit.com for more information
 # See https://pre-commit.com/hooks.html for more hooks
 repos:
-- repo: https://github.com/pycqa/flake8
-  rev: 3.9.2
-  exclude: tests/
+- repo: https://github.com/astral-sh/ruff-pre-commit
+  rev: v0.0.291
   hooks:
-    - id: flake8
+    - id: ruff
 - repo: https://github.com/pre-commit/mirrors-mypy
   rev: ''  # Use the sha / tag you want to point at
   hooks:
