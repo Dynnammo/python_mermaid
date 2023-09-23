@@ -5,12 +5,13 @@ To test each diagram, please make sure you have [Poetry](https://python-poetry.o
 
 ```shell
 poetry install
+poetry shell
 ```
 
-To create a diagram, simply run `python the_file_you_wanna_run.py`.
+To create a diagram, simply run `python ./examples/the_file_you_wanna_run.py`.
 
 ```py
-python march_family.py
+python ./examples/the_march_family.py
 ```
 
 ## List of available diagrams for discovering purposes
