@@ -51,4 +51,4 @@ jobs:
       #----------------------------------------------
       - name: Lint files
         run: |
-          poetry run flake8 python_mermaid
+          poetry run ruff check .

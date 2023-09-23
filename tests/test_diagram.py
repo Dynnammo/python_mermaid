@@ -1,5 +1,4 @@
-import pytest
-from python_mermaid.diagram import MermaidDiagram, Node, Link
+from python_mermaid.diagram import MermaidDiagram
 from .utils import *
 
 def test_setup_diagram_with_only_a_title():
@@ -60,3 +59,7 @@ def test_diagram_with_interactions():
         interactions=[INTERACTION_1]
     )
     assert str(m) == diagram_with_interactions
+
+def test_diagram_without_title():
+    m = MermaidDiagram()
+    assert str(m) == diagram_without_title

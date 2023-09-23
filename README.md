@@ -103,9 +103,10 @@ poetry shell
 poetry install --with dev
 ```
 
-To launch tests:
-```shell
-poetry run pytest
+### Quick commands
+- Launch tests: `poetry run pytest`
+- Check linting: `poetry run ruff check .`
+- Check typing: `poetry run mypy python_mermaid`
 ```
 
 To check linting:
