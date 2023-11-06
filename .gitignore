@@ -2,3 +2,4 @@
 coverage.xml
 dist/
 __pycache__
+.vscode/

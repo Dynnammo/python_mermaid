@@ -1,11 +1,12 @@
-from typing import List
-from .node import Node
+from typing import List, Optional
+from .node import AbstractNode, Node
 from .link import Link
 from .interaction import Interaction
 
 DIAGRAM_TYPES = {
     "default": "graph",
-    "flowchart": "flowchart"
+    "flowchart": "flowchart",
+    "statechart": "stateDiagram-v2"
 }
 
 DIAGRAM_ORIENTATION = {
@@ -34,6 +35,8 @@ class MermaidDiagram:
         self.interactions = interactions
         self.type = DIAGRAM_TYPES[type]
         self.orientation = DIAGRAM_ORIENTATION[orientation]
+        self.startNode = None
+        self.endNode = None
 
     def add_nodes(self, nodes=[]):
         self.nodes += nodes
@@ -41,8 +44,13 @@ class MermaidDiagram:
     def add_links(self, links=[]):
         self.links += links
 
-    def __str__(self):
-        self.string = f"---\ntitle: {self.title}\n---\n" if self.title else ""
+    def add_start_and_end_nodes(self, 
+                                start_node:Optional[AbstractNode] = None, 
+                                end_node:Optional[AbstractNode] = None):
+        self.startNode = start_node # type: ignore
+        self.endNode = end_node # type: ignore
+
+    def __get_graph_str(self):
         nodes_string = (
             '\n'.join([str(node) for node in self.nodes])
         )
@@ -63,5 +71,36 @@ class MermaidDiagram:
                 ]
             )
         )
-        self.string += '\n'.join(final_strings)
+        return '\n'.join(final_strings)
+    
+    def __get_state_diagram_str(self):
+        nodes_string = (
+            '\n'.join([str(node) for node in self.nodes if str(node)!=""])
+        )
+        links_string = (
+            '\n'.join([str(link) for link in self.links])
+        )
+        final_strings = list(
+            filter(
+                None,
+                [
+                    f"{self.type}",
+                    nodes_string,
+                    f"[*] --> {self.startNode.id}" if self.startNode else None,
+                    links_string,
+                    f"{self.endNode.id} --> [*]" if self.endNode else None
+                ]
+            )
+        )
+        return '\n'.join(final_strings)
+
+    def __str__(self):
+        self.string = f"---\ntitle: {self.title}\n---\n" if self.title else ""
+        content = ""
+        if self.type == "graph":
+            content = self.__get_graph_str()
+        elif self.type == "stateDiagram-v2":
+            content = self.__get_state_diagram_str()
+        self.string += content
         return self.string
+        

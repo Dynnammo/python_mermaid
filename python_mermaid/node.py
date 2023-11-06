@@ -28,8 +28,19 @@ NODE_SHAPES = {
     "double-circle": NodeShape("(((", ")))"),
 }
 
+class AbstractNode:
+    def __init__(
+            self,
+            id: str,
+            content: str = ""
+    ):
+        self.id = snake_case(id)
+        self.content = content if content else id
+    
+    def __repr__(self):
+        return f"{self.id}['{self.content}']"
 
-class Node:
+class Node(AbstractNode):
     def __init__(
         self,
         id: str,
@@ -37,8 +48,7 @@ class Node:
         shape: str = "normal",
         sub_nodes: List = [],
     ):
-        self.id = snake_case(id)
-        self.content = content if content else id
+        super().__init__(id, content)
         self.shape = NODE_SHAPES[shape]
         self.sub_nodes = sub_nodes
 
@@ -66,3 +76,34 @@ class Node:
                 self.shape.end
             ])
         return s
+
+class StateNode(AbstractNode):
+    def __init__(
+            self,
+            id: str,
+            content: str = ""
+    ):
+        self.id = snake_case(id)
+        self.content = id if content == "" else content
+        self.note = None
+
+    def add_note(self, message, position="right"):
+        self.note = {
+            "message": message,
+            "position": position
+        }
+
+    def __str__(self):
+        if self.content == self.id:
+            result = ""
+        else:
+            result = f"state \"{self.content}\" as {self.id}"
+        if self.note:
+            if "\n" in self.note['message']:
+                result += f"\nnote {self.note['position']} of {self.id}" \
+                + f"\n{self.note['message']}" \
+                + "\nend note"
+            else:
+                result += f"\nnote {self.note['position']} of {self.id}: " \
+                       +  f"{self.note['message']}"
+        return result

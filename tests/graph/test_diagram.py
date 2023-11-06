@@ -7,6 +7,7 @@ def test_setup_diagram_with_only_a_title():
 
 def test_diagram_with_only_a_node():
     m = MermaidDiagram(title=DUMMY_TITLE, nodes=[NODE_1])
+    print(diagram_with_one_node)
     assert str(m) == diagram_with_one_node
 
 def test_diagram_with_multiple_nodes():

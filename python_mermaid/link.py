@@ -1,4 +1,4 @@
-from .node import Node
+from .node import AbstractNode, StateNode
 
 # Link are created following the documentation here :
 # https://mermaid.js.org/syntax/flowchart.html#links-between-nodes
@@ -20,8 +20,8 @@ LINK_HEADS = {
 class Link:
     def __init__(
         self,
-        origin: Node,
-        end: Node,
+        origin: AbstractNode,
+        end: AbstractNode,
         shape: str = "normal",
         head_left: str = "none",
         head_right: str = "arrow",
@@ -44,3 +44,13 @@ class Link:
             " " + self.end.id
         ]
         return "".join(elements)
+    
+class StateLink(Link):
+    def __init__(self, origin: StateNode, end: StateNode, message: str = ""):
+        super().__init__(origin, end, "normal", "none", "arrow", message)
+
+    def __str__(self):
+        element = f"{self.origin.id} --> {self.end.id}"
+        if self.message != "":
+            element += f": {self.message}"
+        return element
