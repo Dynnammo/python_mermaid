@@ -85,8 +85,25 @@ class StateNode(AbstractNode):
     ):
         self.id = snake_case(id)
         self.content = id if content == "" else content
+        self.note = None
+
+    def add_note(self, message, position="right"):
+        self.note = {
+            "message": message,
+            "position": position
+        }
 
     def __str__(self):
         if self.content == self.id:
-            return ""
-        return f"state \"{self.content}\" as {self.id}"
+            result = ""
+        else:
+            result = f"state \"{self.content}\" as {self.id}"
+        if self.note:
+            if "\n" in self.note['message']:
+                result += f"\nnote {self.note['position']} of {self.id}" \
+                + f"\n{self.note['message']}" \
+                + "\nend note"
+            else:
+                result += f"\nnote {self.note['position']} of {self.id}: " \
+                       +  f"{self.note['message']}"
+        return result

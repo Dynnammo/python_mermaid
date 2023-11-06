@@ -44,6 +44,7 @@ simple_diagram = replace_all(
 
 diagram_with_one_node = open('tests/stateDiagram/diagram_files/diagram_with_one_node', 'r').read()
 diagram_with_multiple_nodes = open('tests/stateDiagram/diagram_files/diagram_with_multiple_nodes', 'r').read()
-
+diagram_with_short_comment = open('tests/stateDiagram/diagram_files/diagram_with_short_comment', 'r').read()
+diagram_with_long_comment = open('tests/stateDiagram/diagram_files/diagram_with_long_comment', 'r').read()
 diagram_with_nodes_and_links = open('tests/stateDiagram/diagram_files/diagram_with_nodes_and_links', 'r').read()
 

@@ -55,6 +55,18 @@ def test_adding_links_to_diagram():
     m.add_links([LINK_2, LINK_3])
     assert str(m) == diagram_with_nodes_and_links
 
+def test_diagram_with_short_comment():
+    n = StateNode(NODE_2.id, NODE_2.content)
+    n.add_note("This is a short comment")
+    m = MermaidDiagram(title=DUMMY_TITLE, nodes=[n], type="statechart")
+    assert str(m) == diagram_with_short_comment
+
+def test_diagram_with_long_comment():
+    n = StateNode(NODE_2.id, NODE_2.content)
+    n.add_note("This is a long comment\nwith second line")
+    m = MermaidDiagram(title=DUMMY_TITLE, nodes=[n], type="statechart")
+    assert str(m) == diagram_with_long_comment
+
 # def test_adding_links_to_diagram():
 #     m = MermaidDiagram(
 #         title=DUMMY_TITLE,
