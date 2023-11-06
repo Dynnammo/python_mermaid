@@ -50,7 +50,7 @@ class MermaidDiagram:
         self.startNode = start_node # type: ignore
         self.endNode = end_node # type: ignore
 
-    def __getGraphStr(self):
+    def __get_graph_str(self):
         nodes_string = (
             '\n'.join([str(node) for node in self.nodes])
         )
@@ -73,7 +73,7 @@ class MermaidDiagram:
         )
         return '\n'.join(final_strings)
     
-    def __getStateDiagramStr(self):
+    def __get_state_diagram_str(self):
         nodes_string = (
             '\n'.join([str(node) for node in self.nodes if str(node)!=""])
         )
@@ -98,9 +98,9 @@ class MermaidDiagram:
         self.string = f"---\ntitle: {self.title}\n---\n" if self.title else ""
         content = ""
         if self.type == "graph":
-            content = self.__getGraphStr()
+            content = self.__get_graph_str()
         elif self.type == "stateDiagram-v2":
-            content = self.__getStateDiagramStr()
+            content = self.__get_state_diagram_str()
         self.string += content
         return self.string
         
