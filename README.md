@@ -87,6 +87,14 @@ which results can be seen [here](https://mermaid.live/edit#pako:eNptj8FOw0AMRH9l
     - [ ] Styling and classes ([#19](https://github.com/Dynnammo/python_mermaid/issues/19) and [#20](https://github.com/Dynnammo/python_mermaid/issues/20))
     - [ ] Basic support for fontawesome ([#23](https://github.com/Dynnammo/python_mermaid/issues/23))
 
+### November 2023
+- [ ] Main Features of stateflow-v2
+    - [ ] Nodes
+    - [ ] Notes
+    - [ ] Start and End nodes
+    - [ ] Named links between nodes
+    - [ ] Graph configuration
+
 ### End 2023
 - [ ] Architecture improvements for easing diagram creation
 ## Development
