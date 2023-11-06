@@ -89,7 +89,7 @@ which results can be seen [here](https://mermaid.live/edit#pako:eNptj8FOw0AMRH9l
 
 ### November 2023
 - [ ] Main Features of stateflow-v2
-    - [ ] Nodes
+    - [x] Nodes
     - [ ] Notes
     - [ ] Start and End nodes
     - [ ] Named links between nodes

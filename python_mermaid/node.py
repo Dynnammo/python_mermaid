@@ -28,8 +28,19 @@ NODE_SHAPES = {
     "double-circle": NodeShape("(((", ")))"),
 }
 
+class AbstractNode:
+    def __init__(
+            self,
+            id: str,
+            content: str = ""
+    ):
+        self.id = snake_case(id)
+        self.content = content if content else id
+    
+    def __repr__(self):
+        return f"{self.id}['{self.content}']"
 
-class Node:
+class Node(AbstractNode):
     def __init__(
         self,
         id: str,
@@ -37,8 +48,7 @@ class Node:
         shape: str = "normal",
         sub_nodes: List = [],
     ):
-        self.id = snake_case(id)
-        self.content = content if content else id
+        super().__init__(id, content)
         self.shape = NODE_SHAPES[shape]
         self.sub_nodes = sub_nodes
 
@@ -66,3 +76,17 @@ class Node:
                 self.shape.end
             ])
         return s
+
+class StateNode(AbstractNode):
+    def __init__(
+            self,
+            id: str,
+            content: str = ""
+    ):
+        self.id = snake_case(id)
+        self.content = id if content == "" else content
+
+    def __str__(self):
+        if self.content == self.id:
+            return ""
+        return f"state \"{self.content}\" as {self.id}"

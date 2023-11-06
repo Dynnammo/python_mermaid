@@ -1,5 +1,5 @@
 from python_mermaid.interaction import Interaction
-from python_mermaid.node import Node
+from python_mermaid.node import AbstractNode
 from .utils import *
 
 def test_interaction():
