@@ -92,7 +92,7 @@ which results can be seen [here](https://mermaid.live/edit#pako:eNptj8FOw0AMRH9l
     - [x] Nodes
     - [ ] Notes
     - [ ] Start and End nodes
-    - [ ] Named links between nodes
+    - [x] Named links between nodes
     - [ ] Graph configuration
 
 ### End 2023
