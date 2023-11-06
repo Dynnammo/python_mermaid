@@ -39,15 +39,15 @@ def replace_all(string, dict):
         string = string.replace(k, v)
     return string
 
-diagram_without_title = open('tests/diagram_files/diagram_without_title', 'r').read()
+diagram_without_title = open('tests/graph/diagram_files/diagram_without_title', 'r').read()
 
 simple_diagram = replace_all(
-    open('tests/diagram_files/simple_diagram', 'r').read(),
+    open('tests/graph/diagram_files/simple_diagram', 'r').read(),
     {'DUMMY_TITLE': DUMMY_TITLE}
 )
 
 diagram_with_one_node = replace_all(
-    open('tests/diagram_files/diagram_with_one_node', 'r').read(),
+    open('tests/graph/diagram_files/diagram_with_one_node', 'r').read(),
     {
         'DUMMY_TITLE': DUMMY_TITLE,
         'NODE_1.id': NODE_1.id,
@@ -66,7 +66,7 @@ diagram_with_nodes_and_links = (
 )
 
 diagram_with_subgraphs = replace_all(
-    open('tests/diagram_files/diagram_with_subgraphs', 'r').read(),
+    open('tests/graph/diagram_files/diagram_with_subgraphs', 'r').read(),
     {
         'DUMMY_TITLE': DUMMY_TITLE,
         'NODE_2.id': NODE_2.id,
@@ -77,7 +77,7 @@ diagram_with_subgraphs = replace_all(
 )
 
 diagram_with_interactions = replace_all(
-    open('tests/diagram_files/diagram_with_interactions', 'r').read(),
+    open('tests/graph/diagram_files/diagram_with_interactions', 'r').read(),
     {
         'DUMMY_TITLE': DUMMY_TITLE,
         'NODE_1.id': NODE_1.id,
