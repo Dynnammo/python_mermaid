@@ -47,4 +47,4 @@ diagram_with_multiple_nodes = open('tests/stateDiagram/diagram_files/diagram_wit
 diagram_with_short_comment = open('tests/stateDiagram/diagram_files/diagram_with_short_comment', 'r').read()
 diagram_with_long_comment = open('tests/stateDiagram/diagram_files/diagram_with_long_comment', 'r').read()
 diagram_with_nodes_and_links = open('tests/stateDiagram/diagram_files/diagram_with_nodes_and_links', 'r').read()
-
+diagram_with_start_end_node = open('tests/stateDiagram/diagram_files/diagram_with_start_end_nodes', 'r').read()

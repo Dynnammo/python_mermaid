@@ -91,7 +91,7 @@ which results can be seen [here](https://mermaid.live/edit#pako:eNptj8FOw0AMRH9l
 - [ ] Main Features of stateflow-v2
     - [x] Nodes
     - [x] Notes
-    - [ ] Start and End nodes
+    - [x] Start and End nodes
     - [x] Named links between nodes
     - [ ] Graph configuration
 

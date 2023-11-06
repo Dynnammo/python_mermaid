@@ -1,5 +1,5 @@
-from typing import List
-from .node import Node
+from typing import List, Optional
+from .node import AbstractNode, Node
 from .link import Link
 from .interaction import Interaction
 
@@ -35,12 +35,20 @@ class MermaidDiagram:
         self.interactions = interactions
         self.type = DIAGRAM_TYPES[type]
         self.orientation = DIAGRAM_ORIENTATION[orientation]
+        self.startNode = None
+        self.endNode = None
 
     def add_nodes(self, nodes=[]):
         self.nodes += nodes
 
     def add_links(self, links=[]):
         self.links += links
+
+    def add_start_and_end_nodes(self, 
+                                start_node:Optional[AbstractNode] = None, 
+                                end_node:Optional[AbstractNode] = None):
+        self.startNode = start_node # type: ignore
+        self.endNode = end_node # type: ignore
 
     def __getGraphStr(self):
         nodes_string = (
@@ -78,7 +86,9 @@ class MermaidDiagram:
                 [
                     f"{self.type}",
                     nodes_string,
-                    links_string
+                    f"[*] --> {self.startNode.id}" if self.startNode else None,
+                    links_string,
+                    f"{self.endNode.id} --> [*]" if self.endNode else None
                 ]
             )
         )

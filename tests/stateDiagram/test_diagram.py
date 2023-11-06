@@ -45,6 +45,16 @@ def test_diagram_with_nodes_and_links():
     )
     assert str(m) == diagram_with_nodes_and_links
 
+def test_diagram_with_start_end_nodes():
+    m = MermaidDiagram(
+        title=DUMMY_TITLE,
+        nodes=[NODE_1, NODE_2, NODE_3],
+        links=[LINK_1, LINK_2, LINK_3],
+        type="statechart"
+    )
+    m.add_start_and_end_nodes(NODE_2, NODE_3)
+    assert str(m) == diagram_with_start_end_node
+
 def test_adding_links_to_diagram():
     m = MermaidDiagram(
         title=DUMMY_TITLE,
