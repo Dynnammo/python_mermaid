@@ -15,11 +15,35 @@ NODE_3 = StateNode(
 )
 
 LINK_1 = StateLink(
-    NODE_1,
-    NODE_2
-)
-LINK_2 = StateLink(
-    NODE_1,
     NODE_2,
-    "Example message"
+    NODE_3
 )
+
+LINK_2 = StateLink(
+    NODE_2,
+    NODE_1
+)
+
+LINK_3 = StateLink(
+    NODE_1,
+    NODE_3,
+    "Link comment"
+)
+
+def replace_all(string, dict):
+    for k, v in dict.items():
+        string = string.replace(k, v)
+    return string
+
+diagram_without_title = open('tests/stateDiagram/diagram_files/diagram_without_title', 'r').read()
+
+simple_diagram = replace_all(
+    open('tests/stateDiagram/diagram_files/simple_diagram', 'r').read(),
+    {'DUMMY_TITLE': DUMMY_TITLE}
+)
+
+diagram_with_one_node = open('tests/stateDiagram/diagram_files/diagram_with_one_node', 'r').read()
+diagram_with_multiple_nodes = open('tests/stateDiagram/diagram_files/diagram_with_multiple_nodes', 'r').read()
+
+diagram_with_nodes_and_links = open('tests/stateDiagram/diagram_files/diagram_with_nodes_and_links', 'r').read()
+
