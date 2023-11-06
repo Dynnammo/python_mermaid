@@ -1,0 +1,5 @@
+---
+title: My diagram
+---
+stateDiagram-v2
+state "My first node" as my_first_node
