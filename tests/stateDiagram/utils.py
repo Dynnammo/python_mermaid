@@ -8,6 +8,12 @@ NODE_1 = StateNode(
 NODE_2 = StateNode(
     "My first node"
 )
+
+NODE_3 = StateNode(
+    "My second node",
+    "Different Title"
+)
+
 LINK_1 = StateLink(
     NODE_1,
     NODE_2
