@@ -1,5 +1,5 @@
 import pytest
-from python_mermaid.node import Node
+from python_mermaid.node import AbstractNode
 from .utils import NODE_1, NODE_2
 
 def test_node():
