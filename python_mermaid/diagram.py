@@ -37,6 +37,7 @@ class MermaidDiagram:
             links=links,
             interactions=interactions,
         )
+        self.pretty_print = False
 
     def add_nodes(self, nodes=[]):
         self.graph.add_nodes(nodes)
@@ -58,14 +59,20 @@ class MermaidDiagram:
         s = f"---\ntitle: {self.title}\n---\n" if self.title else ""
         content = ""
         if self.type == "graph":
-            content = self.graph.get_graph_str()
+            content = self.graph.get_graph_str(
+                Graph.PrettyPrintIdentation if self.pretty_print else 0
+            )
         elif self.type == "stateDiagram-v2":
-            content = self.graph.get_state_diagram_str()
+            content = self.graph.get_state_diagram_str(
+                Graph.PrettyPrintIdentation if self.pretty_print else 0
+            )
         s += content
         return s
 
 
 class Graph:
+    PrettyPrintIdentation = 2
+
     def __init__(
         self,
         header: str,
@@ -100,18 +107,26 @@ class Graph:
         self.sub_graphs.append(s)
         return s
 
-    def get_graph_str(self):
-        nodes_string = "\n".join([str(node) for node in self.nodes])
-        links_string = "\n".join([str(link) for link in self.links])
+    def get_graph_str(self, num_spaces: int = 0):
+        spaces = num_spaces * " "
+        nodes_string = "\n".join([f"{spaces}{str(node)}" for node in self.nodes])
+        links_string = "\n".join([f"{spaces}{str(link)}" for link in self.links])
         interactions_string = "\n".join(
-            [str(interaction) for interaction in self.interactions]
+            [f"{spaces}{str(interaction)}" for interaction in self.interactions]
         )
-        sub_graphs = "\n".join([f"{g.get_graph_str()}\nend" for g in self.sub_graphs])
+        sub_graphs = f"\n".join(
+            [
+                f"{g.get_graph_str(
+                    num_spaces + self.PrettyPrintIdentation if num_spaces != 0 else 0
+                )}\n{spaces}end"
+                for g in self.sub_graphs
+            ]
+        )
         final_strings = list(
             filter(
                 None,
                 [
-                    self.header,
+                    f"{(num_spaces-self.PrettyPrintIdentation)*' '}{self.header}",
                     nodes_string,
                     links_string,
                     interactions_string,
@@ -121,21 +136,29 @@ class Graph:
         )
         return "\n".join(final_strings)
 
-    def get_state_diagram_str(self):
-        nodes_string = "\n".join([str(node) for node in self.nodes if str(node) != ""])
-        links_string = "\n".join([str(link) for link in self.links])
+    def get_state_diagram_str(self, num_spaces: int = 0):
+        spaces = num_spaces * " "
+        nodes_string = "\n".join(
+            [f"{spaces}{str(node)}" for node in self.nodes if str(node) != ""]
+        )
+        links_string = "\n".join([f"{spaces}{str(link)}" for link in self.links])
         sub_graphs = "\n".join(
-            [f"{g.get_state_diagram_str()}\nend" for g in self.sub_graphs]
+            [
+                f"{g.get_state_diagram_str(
+                    num_spaces + self.PrettyPrintIdentation if num_spaces != 0 else 0
+                )}\n{spaces}end"
+                for g in self.sub_graphs
+            ]
         )
         final_strings = list(
             filter(
                 None,
                 [
-                    f"{self.header}",
+                    f"{(num_spaces-self.PrettyPrintIdentation)*' '}{self.header}",
                     nodes_string,
-                    f"[*] --> {self.startNode.id}" if self.startNode else None,
+                    f"{spaces}[*] --> {self.startNode.id}" if self.startNode else None,
                     links_string,
-                    f"{self.endNode.id} --> [*]" if self.endNode else None,
+                    f"{spaces}{self.endNode.id} --> [*]" if self.endNode else None,
                     sub_graphs,
                 ],
             )
