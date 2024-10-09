@@ -1,4 +1,5 @@
 from .node import AbstractNode, StateNode
+from .utils import sanitize_string
 
 # Link are created following the documentation here :
 # https://mermaid.js.org/syntax/flowchart.html#links-between-nodes
@@ -22,7 +23,7 @@ class Link:
         self.head_left = LINK_HEADS[head_left]
         self.head_right = LINK_HEADS[head_right]
         self.shape = LINK_SHAPES[shape]
-        self.message = message
+        self.message = sanitize_string(message)
 
     def __str__(self):
         elements = [

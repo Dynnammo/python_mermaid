@@ -18,7 +18,9 @@ def sanitize_string(s: str) -> str:
     translation_table = str.maketrans({
         "\n": "/",
         "\t": "/",
-        "\r": ""
+        "\r": "",
+        "(": "-",
+        ")": "-"
     })
     # fmt: on
     return s.translate(translation_table)
