@@ -6,7 +6,7 @@ from .interaction import Interaction
 DIAGRAM_TYPES = {
     "default": "graph",
     "flowchart": "flowchart",
-    "statechart": "stateDiagram-v2"
+    "statechart": "stateDiagram-v2",
 }
 
 DIAGRAM_ORIENTATION = {
@@ -27,7 +27,7 @@ class MermaidDiagram:
         links: List[Link] = [],
         interactions: List[Interaction] = [],
         type="default",
-        orientation="default"
+        orientation="default",
     ):
         self.title = title
         self.nodes = nodes
@@ -44,21 +44,19 @@ class MermaidDiagram:
     def add_links(self, links=[]):
         self.links += links
 
-    def add_start_and_end_nodes(self, 
-                                start_node:Optional[AbstractNode] = None, 
-                                end_node:Optional[AbstractNode] = None):
-        self.startNode = start_node # type: ignore
-        self.endNode = end_node # type: ignore
+    def add_start_and_end_nodes(
+        self,
+        start_node: Optional[AbstractNode] = None,
+        end_node: Optional[AbstractNode] = None,
+    ):
+        self.startNode = start_node  # type: ignore
+        self.endNode = end_node  # type: ignore
 
     def __get_graph_str(self):
-        nodes_string = (
-            '\n'.join([str(node) for node in self.nodes])
-        )
-        links_string = (
-            '\n'.join([str(link) for link in self.links])
-        )
-        interactions_string = (
-            '\n'.join([str(interaction) for interaction in self.interactions])
+        nodes_string = "\n".join([str(node) for node in self.nodes])
+        links_string = "\n".join([str(link) for link in self.links])
+        interactions_string = "\n".join(
+            [str(interaction) for interaction in self.interactions]
         )
         final_strings = list(
             filter(
@@ -67,19 +65,15 @@ class MermaidDiagram:
                     f"{self.type} {self.orientation}",
                     nodes_string,
                     links_string,
-                    interactions_string
-                ]
+                    interactions_string,
+                ],
             )
         )
-        return '\n'.join(final_strings)
-    
+        return "\n".join(final_strings)
+
     def __get_state_diagram_str(self):
-        nodes_string = (
-            '\n'.join([str(node) for node in self.nodes if str(node)!=""])
-        )
-        links_string = (
-            '\n'.join([str(link) for link in self.links])
-        )
+        nodes_string = "\n".join([str(node) for node in self.nodes if str(node) != ""])
+        links_string = "\n".join([str(link) for link in self.links])
         final_strings = list(
             filter(
                 None,
@@ -88,11 +82,11 @@ class MermaidDiagram:
                     nodes_string,
                     f"[*] --> {self.startNode.id}" if self.startNode else None,
                     links_string,
-                    f"{self.endNode.id} --> [*]" if self.endNode else None
-                ]
+                    f"{self.endNode.id} --> [*]" if self.endNode else None,
+                ],
             )
         )
-        return '\n'.join(final_strings)
+        return "\n".join(final_strings)
 
     def __str__(self):
         self.string = f"---\ntitle: {self.title}\n---\n" if self.title else ""
@@ -103,4 +97,3 @@ class MermaidDiagram:
             content = self.__get_state_diagram_str()
         self.string += content
         return self.string
-        

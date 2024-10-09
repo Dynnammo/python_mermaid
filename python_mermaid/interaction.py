@@ -3,10 +3,7 @@ from .node import Node
 
 # List of all interactions are documented here
 # https://mermaid.js.org/syntax/flowchart.html#interaction
-INTERACTION_TYPE = {
-    "link": "href",
-    "callback": "call callback()"
-}
+INTERACTION_TYPE = {"link": "href", "callback": "call callback()"}
 
 
 class Interaction:
