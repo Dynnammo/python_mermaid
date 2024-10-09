@@ -10,7 +10,6 @@ DIAGRAM_TYPES = {
 }
 
 DIAGRAM_ORIENTATION = {
-    "default": "",
     "top to bottom": "TB",
     "top-down": "TD",
     "bottom to top": "BT",
@@ -27,7 +26,7 @@ class MermaidDiagram:
         links: List[Link] = [],
         interactions: List[Interaction] = [],
         type="default",
-        orientation="default",
+        orientation="top-down",
     ):
         self.title = title
         self.nodes = nodes
