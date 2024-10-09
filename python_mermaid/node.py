@@ -1,5 +1,5 @@
 from typing import List
-from .utils import snake_case
+from .utils import snake_case, sanitize_string
 
 
 class NodeShape:
@@ -34,6 +34,7 @@ class AbstractNode:
     def __init__(self, id: str, content: str = ""):
         self.id = snake_case(id)
         self.content = content if content else id
+        self.content = sanitize_string(self.content)
 
     def __repr__(self):
         return f"{self.id}['{self.content}']"
