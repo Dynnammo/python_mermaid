@@ -91,7 +91,6 @@ class Graph:
         nodes: Optional[List[Node]] = None,
         links: Optional[List[Link]] = None,
         interactions: Optional[List[Interaction]] = None,
-        sub_graphs: Optional[List[Graph]] = None
     ):
         self.header = header
         self.nodes = nodes if isinstance(nodes, list) else []
@@ -99,7 +98,7 @@ class Graph:
         self.interactions = interactions if isinstance(interactions, list) else []
         self.startNode = None
         self.endNode = None
-        self.sub_graphs = sub_graphs if isinstance(sub_graphs, list) else []
+        self.sub_graphs: List[Graph] = [] 
 
     def add_nodes(self, nodes=[]):
         self.nodes += nodes
