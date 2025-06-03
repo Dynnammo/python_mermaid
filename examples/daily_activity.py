@@ -11,7 +11,7 @@ work_again = StateNode("Work again")
 visit_parents = StateNode("Visit parents")
 dinner = StateNode("Eat dinner")
 
-m = MermaidDiagram(
+m = StateDiagram(
     type="statechart",
     nodes=[sleep, breakfast, work, fun, lunch, work_again, visit_parents, dinner],
     links=[
