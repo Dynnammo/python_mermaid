@@ -18,7 +18,7 @@ DIAGRAM_ORIENTATION = {
 }
 
 
-class MermaidDiagram:
+class Diagram:
     def __init__(
         self,
         title: str = "",
@@ -68,6 +68,18 @@ class MermaidDiagram:
             )
         s += content
         return s
+
+
+class MermaidDiagram(Diagram):
+    pass
+
+
+class StateDiagram(Diagram):
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.type =  DIAGRAM_TYPES["statechart"]
+        self.orientation = ""
+        self.graph.header = f"{self.type}"
 
 
 class Graph:
