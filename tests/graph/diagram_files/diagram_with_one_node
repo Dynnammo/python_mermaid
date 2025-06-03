@@ -1,5 +1,5 @@
 ---
 title: DUMMY_TITLE
 ---
-graph 
+graph TD
 NODE_1.id["NODE_1.content"]
