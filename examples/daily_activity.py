@@ -1,4 +1,4 @@
-from python_mermaid.diagram import MermaidDiagram
+from python_mermaid.diagram import StateDiagram
 from python_mermaid.node import StateNode
 from python_mermaid.link import StateLink
 

@@ -93,9 +93,9 @@ class Graph:
         interactions: Optional[List[Interaction]] = None,
     ):
         self.header = header
-        self.nodes = nodes if type(nodes) is list else []
-        self.links = links if type(links) is list else []
-        self.interactions = interactions if type(interactions) is list else []
+        self.nodes = nodes if isinstance(nodes, list) else []
+        self.links = links if isinstance(links, list) else []
+        self.interactions = interactions if isinstance(interactions, list) else []
         self.startNode = None
         self.endNode = None
         self.sub_graphs = []
@@ -126,11 +126,9 @@ class Graph:
         interactions_string = "\n".join(
             [f"{spaces}{str(interaction)}" for interaction in self.interactions]
         )
-        sub_graphs = f"\n".join(
+        sub_graphs = "\n".join(
             [
-                f"{g.get_graph_str(
-                    num_spaces + self.PrettyPrintIdentation if num_spaces != 0 else 0
-                )}\n{spaces}end"
+                f"{g.get_graph_str(num_spaces + self.PrettyPrintIdentation if num_spaces != 0 else 0)}\n{spaces}end" # noqa: E501
                 for g in self.sub_graphs
             ]
         )
@@ -156,9 +154,7 @@ class Graph:
         links_string = "\n".join([f"{spaces}{str(link)}" for link in self.links])
         sub_graphs = "\n".join(
             [
-                f"{g.get_state_diagram_str(
-                    num_spaces + self.PrettyPrintIdentation if num_spaces != 0 else 0
-                )}\n{spaces}end"
+                f"{g.get_state_diagram_str(num_spaces + self.PrettyPrintIdentation if num_spaces != 0 else 0)}\n{spaces}end" # noqa: E501
                 for g in self.sub_graphs
             ]
         )
