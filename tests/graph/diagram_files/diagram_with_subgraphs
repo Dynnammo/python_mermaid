@@ -1,7 +1,7 @@
 ---
 title: DUMMY_TITLE
 ---
-graph 
+graph TD
 subgraph my_big_node ["My big node"]
 NODE_1.id["NODE_1.content"]
 end

@@ -1,9 +1,5 @@
 # Creating a simple flowchart diagram, without any interactions nor style
-from python_mermaid.diagram import (
-    MermaidDiagram,
-    Node,
-    Link
-)
+from python_mermaid.diagram import MermaidDiagram, Node, Link
 
 # Family members
 meg = Node("Meg")
@@ -22,10 +18,6 @@ family_links = [
     Link(robert, amy),
 ]
 
-chart = MermaidDiagram(
-    title="Little Women",
-    nodes=the_march_family,
-    links=family_links
-)
+chart = MermaidDiagram(title="Little Women", nodes=the_march_family, links=family_links)
 
 print(chart)

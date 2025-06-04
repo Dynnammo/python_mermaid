@@ -60,7 +60,7 @@ Returns the following
 ---
 title: Little Women
 ---
-graph 
+graph TD
 meg["Meg"]
 jo["Jo"]
 beth["Beth"]
