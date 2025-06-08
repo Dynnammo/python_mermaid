@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "python_mermaid"
-version = "0.1.5"
+version = "0.1.6"
 description = "A (quite) simple that helps creating on-the-fly Mermaid diagrams"
 authors = ["Dynnammo <contact@dynnammo.com>"]
 readme = "README.md"
