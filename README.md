@@ -74,29 +74,12 @@ robert_march ---> amy
 which results can be seen [here](https://mermaid.live/edit#pako:eNptj8FOw0AMRH9l5XPzA3tAAnFC9AIHpOIKuYlJUmo72jqHqOq_46zEiZzGbzzS2DdorWPI0DQNqo9-4ZxeRw9NHyasqHXTF5qGhCrcfyLsuUc4op4t4MXqfGIfgp5CKpMsgY-yVCp24uJfQqVdU28V037Ff_sUjQ8pmrbss225a_mWH0fADoSL0NjFlzfUlBB8YGGEHGNH5QcB9R45mt3eF20he5l5B_PUkfPzSPG9QP6myzXcifRg9sf3X1ADb2E)
 
 ## Roadmap
-### October 2023
-1-to-1 implementation of [flowchart](https://mermaid.js.org/syntax/flowchart.html#flowcharts-basic-syntax)
-- [ ] All features of flowchart
-    - [x] Chart title
-    - [x] Nodes shapes
-    - [x] Links between nodes
-    - [x] Subgraph
-        - [ ] Links between nodes with subgraphs
-        - [ ] Directions ([#24](https://github.com/Dynnammo/python_mermaid/issues/24))
-    - [ ] Interaction
-    - [ ] Styling and classes ([#19](https://github.com/Dynnammo/python_mermaid/issues/19) and [#20](https://github.com/Dynnammo/python_mermaid/issues/20))
-    - [ ] Basic support for fontawesome ([#23](https://github.com/Dynnammo/python_mermaid/issues/23))
+### Available features
+- [x] Create basic [flowcharts](https://mermaid.js.org/syntax/flowchart.html) and [statecharts](https://mermaid.js.org/syntax/stateDiagram.html)
 
-### November 2023
-- [ ] Main Features of stateflow-v2
-    - [x] Nodes
-    - [x] Notes
-    - [x] Start and End nodes
-    - [x] Named links between nodes
-    - [ ] Graph configuration
+### Roadmap
+See [issues](https://github.com/Dynnammo/python_mermaid/issues)
 
-### End 2023
-- [ ] Architecture improvements for easing diagram creation
 ## Development
 - Requirements: install [Poetry](https://python-poetry.org). Here is the official method below. ⚠️ Please consider getting a look at Poetry's documentation if it doesn't work. ⚠️
 ```shell
